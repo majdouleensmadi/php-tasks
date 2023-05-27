@@ -1,0 +1,38 @@
+img{
+    height: 200px;
+    width: 200px;
+}
+ .signin{
+    background-color: blue;
+    color: white;
+    text-decoration: none;
+    height: 40px;
+    width:500px;
+    border-radius: 15px;
+    text-align: center;
+    font-size: larger;
+    border: groove gray;
+ }
+ .signup{
+    background-color: red;
+    color: white;
+    text-decoration: none;
+    height: 40px;
+    width: 500px;
+    border-radius: 15px;
+    text-align: center;
+    margin-top: 17px;
+    font-weight: 400;
+    font-size: larger;
+    border: groove gray;
+ }
+ .button{
+    display: flex;
+    flex-direction: column;
+    
+ }
+ .container{
+    align-items: center;
+    justify-content: center;
+    margin-left: 400px;
+ }

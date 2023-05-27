@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="color-bar"></div>
+
+<section class="hero">
+
+<h1>AJAX Request with JavaScript</h1> <input type="text" onkeyup="updateUrl()" id="input"
+
+placeholder="javascript">
+
+<button onclick="get()">Send comment</button>
+
+</section>
+
+<section class="output">
+
+<h1>Get comment: <span id="url"></span></h1>
+
+<pre id="responseElem"></pre>
+
+</section>
+<script>    
+
+var responseElem= document.getElementById("responseElem");
+ var urlElem = document.getElementById("url");
+var input; 
+var comment;
+
+function updateUrl() { 
+input =document.getElementById("input").value; 
+comment= input;
+
+urlElem.innerHTML= comment;
+
+if (event.keyCode == 13) get();
+}
+function get() {
+var xhr = new XMLHttpRequest();
+ xhr.open("GET" , comment, true);
+xhr.onreadystatechange = callback; 
+xhr.send();
+function callback() {
+if (xhr.readyState== 4 && xhr.status == 200) {
+ var response =JSON.parse(xhr.responseText);
+
+console.log(response);
+ responseElem.innerHTML= JSON.stringify(response, null, 2);
+} else
+ {
+console.log(xhr.statusText);
+ responseElen.innerHTML= xhr.statusText;
+}
+}
+}
+
+</script> 
+</body>
+</html>
